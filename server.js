@@ -1,14 +1,17 @@
 const express = require('express');
+const routes = require('./routes');
 const app = express();
 const port = 3000;
 
-app.set('view engine', 'ejs'); // set view engine to ejs
-app.use(express.static('public')); // serve static files from public folder
+// Serve static files from the "public" directory
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.render('index', {title: 'Instagram Downloader', description: 'Download Instagram Reels and Posts'});
-});
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// Use the routes defined in routes/index.js
+app.use('/', routes);
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-})
+    console.log(`Server is running at http://localhost:${port}`);
+});

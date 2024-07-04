@@ -9,8 +9,11 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <h1>Welcome to AIO Downloader</h1>
-        <p><%= description %></p>
+        <h1>Instagram Downloader</h1>
+        <form action="/download/instagram" method="get">
+            <input type="text" name="url" placeholder="Enter Instagram URL">
+            <button type="submit">Download</button>
+        </form>
     </main>
     <%- include('partials/footer') %>
     <script src="/js/script.js"></script>
