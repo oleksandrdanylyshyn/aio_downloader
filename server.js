@@ -1,7 +1,11 @@
 const express = require('express');
-const routes = require('./routes');
 const app = express();
 const port = 3000;
+const routes = require('./routes');
+
+// Middleware to parse request bodies
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Serve static files from the "public" directory
 app.use(express.static('public'));

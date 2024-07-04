@@ -10,8 +10,8 @@
     <%- include('partials/header') %>
     <main>
         <h1>Instagram Downloader</h1>
-        <form action="/download/instagram" method="get">
-            <input type="text" name="url" placeholder="Enter Instagram URL">
+        <form action="/instagram/download" method="post">
+            <input type="text" name="url" placeholder="Enter Instagram URL" required>
             <button type="submit">Download</button>
         </form>
     </main>
